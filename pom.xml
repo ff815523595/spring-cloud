@@ -10,6 +10,7 @@
         <module>service0</module>
         <module>service-ribbon</module>
         <module>service-feign</module>
+        <module>service-config</module>
     </modules>
     <name>spring-cloud-demo Maven Webapp</name>
     <url>http://maven.apache.org</url>
