@@ -48,6 +48,11 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        <!--安全认证-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

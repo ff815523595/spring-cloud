@@ -9,9 +9,10 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#为注册中心加用户验证，加上后访问注册中心地址为---http://${security.user.name}:${security.user.password}@address:port/xxxxx
 security:
   basic:
-    enabled: true
+    enabled: false
   user:
     name: admin
     password: admin123
