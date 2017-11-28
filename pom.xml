@@ -11,6 +11,7 @@
         <module>service-ribbon</module>
         <module>service-feign</module>
         <module>service-config</module>
+        <module>config-client</module>
     </modules>
     <name>spring-cloud-demo Maven Webapp</name>
     <url>http://maven.apache.org</url>
@@ -33,7 +34,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Dalston.SR3</version>
+                <version>Camden.SR7</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

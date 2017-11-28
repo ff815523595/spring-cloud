@@ -40,6 +40,11 @@
             <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
         </dependency>
         <!--hystrix仪表盘 end-->
+        <!--配置刷新-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
