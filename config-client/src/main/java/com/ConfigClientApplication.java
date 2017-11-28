@@ -19,11 +19,14 @@ public class ConfigClientApplication {
 		SpringApplication.run(ConfigClientApplication.class, args);
 	}
 
-	@Value("${democonfigclient.message}")
-	String foo;
+	@Value("${mytest.name}")
+	String fooname;
+
+    @Value("${datasource.url}")
+    String url;
 
 	@RequestMapping(value = "/hi")
 	public String hi(){
-		return foo;
+		return fooname+","+url;
 	}
 }
