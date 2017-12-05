@@ -9,7 +9,11 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-#为注册中心加用户验证，加上后访问注册中心地址为---http://${security.user.name}:${security.user.password}@address:port/xxxxx
+
+  server:
+    enable-self-preservation: false #关闭自我保护机制，开启时不会自动踢出没有相应的服务
+
+#为注册中心加用户验证，加上后且设置enabled=true，访问注册中心地址为---http://${security.user.name}:${security.user.password}@address:port/xxxxx
 security:
   basic:
     enabled: false

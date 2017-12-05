@@ -9,3 +9,8 @@ server:
 spring:
   application:
     name: service-hi
+
+security:
+  user:
+    name: admin
+    password: admin123
