@@ -46,6 +46,12 @@
             <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
         </dependency>
         <!--hystrix仪表盘 end-->
+
+        <!--zipkin 需要jdk1.8+支持-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
     </dependencies>
 
 

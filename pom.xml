@@ -12,6 +12,7 @@
         <module>service-feign</module>
         <module>service-config</module>
         <module>config-client</module>
+        <module>server-zipkin</module>
     </modules>
     <name>spring-cloud-demo Maven Webapp</name>
     <url>http://maven.apache.org</url>
@@ -48,10 +49,21 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-        <!--安全认证-->
+        <!--安全认证
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>-->
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.2.2</version>
         </dependency>
     </dependencies>
 

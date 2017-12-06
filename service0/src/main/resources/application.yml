@@ -9,8 +9,12 @@ server:
 spring:
   application:
     name: service-hi
+  #zipkin:
+    #base-url: http://localhost:9411 #zipkin链路
 
 security:
   user:
     name: admin
     password: admin123
+  basic:
+    enabled: true

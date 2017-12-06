@@ -7,3 +7,9 @@ server:
 spring:
   application:
     name: service-ribbon
+  #zipkin:
+    #base-url: localhost:9411 #zipkin链接
+security:
+  basic:
+    enabled: false
+
