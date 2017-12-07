@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -37,7 +39,7 @@ public class ServiceApplication {
 
     @ApiOperation(value="提示端口信息" ,notes="用于接口信息获取的测试")
     @ApiImplicitParam(name = "name", value = "用户名称", required = true, dataType = "String")
-    @RequestMapping("/hi")
+    @RequestMapping(value = "/hi" , method = RequestMethod.GET)
     public String home(@RequestParam String name) {
         return "hi "+name+",i am from port:" +port;
     }
@@ -47,12 +49,16 @@ public class ServiceApplication {
             @ApiImplicitParam(name="numA",value = "参数A" ,required = true , dataType = "Integer"),
             @ApiImplicitParam(name="numB",value = "参数B" ,required = true , dataType = "Integer")
     })
-    @RequestMapping("/addNum")
+    @RequestMapping(value = "/addNum" , method = RequestMethod.GET)
     public String addNum(@RequestParam("numA") int numA , @RequestParam("numB") int numB){
         int c = numA+numB;
         return String.valueOf(c);
     }
 
+    @Bean
+    public AlwaysSampler defaultSampler(){
+        return new AlwaysSampler();
+    }
 
     @Bean
     public Docket createRestApi() {
