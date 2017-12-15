@@ -1,5 +1,6 @@
 package com.service.service0;
 
+import com.service.service0.impl.SchedualServiceHiHystric;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

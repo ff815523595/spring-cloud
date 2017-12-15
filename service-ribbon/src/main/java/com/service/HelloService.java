@@ -13,10 +13,12 @@ public class HelloService {
 
     @Autowired
     RestTemplate restTemplate;
+    @Autowired
+    AuthTokenRestTemplate authTokenRestTemplate;
 
     @HystrixCommand(fallbackMethod = "hiError")
     public String hiService(String name) {
-        return restTemplate.getForObject("http://SERVICE-HI/hi?name="+name,String.class);
+        return authTokenRestTemplate.getForObject("http://SERVICE-HI/hi?name="+name,String.class);
     }
 
     public String hiError(String name) {
