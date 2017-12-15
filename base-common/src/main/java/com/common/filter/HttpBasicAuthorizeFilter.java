@@ -4,6 +4,8 @@ import com.common.base.ResponseCode;
 import com.common.base.ResponseData;
 import com.common.util.JWTUtils;
 import com.common.util.JsonUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -22,12 +24,15 @@ import java.io.PrintWriter;
 @WebFilter(urlPatterns = "/*")
 public class HttpBasicAuthorizeFilter implements Filter {
 
+    private static final Logger logger = LoggerFactory.getLogger(HttpBasicAuthorizeFilter.class);
+
     JWTUtils jwtUtils = JWTUtils.getInstance();
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         ServletContext context = filterConfig.getServletContext();
         ApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(context);
+        logger.info("权限校验拦截器初始化成功！");
     }
 
     @Override
@@ -37,8 +42,8 @@ public class HttpBasicAuthorizeFilter implements Filter {
         httpResponse.setCharacterEncoding("UTF-8");
         httpResponse.setContentType("application/json; charset=utf-8");
         String auth = httpRequest.getHeader("Authorization");
-        //健康检查控制
         String uri = httpRequest.getRequestURI();
+        //健康检查控制
         if (uri.equals("/autoconfig") || uri.equals("/configprops") || uri.equals("/beans") || uri.equals("/dump")
                 || uri.equals("/env") || uri.equals("/health") || uri.equals("/info") || uri.equals("/mappings")
                 || uri.equals("/metrics") || uri.equals("/shutdown") || uri.equals("/trace")) {
