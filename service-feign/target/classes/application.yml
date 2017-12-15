@@ -12,4 +12,11 @@ service-hi:
 feign:
   hystrix:
     enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000 #hystrix超时时间设置
 
