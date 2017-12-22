@@ -5,7 +5,8 @@ spring:
     name: config-client
   cloud:
     config:
-      profile: ser-dev,sql-dev
+      name: config-client-ser,config-client-sql
+      profile: dev
       label: master
       discovery:
         enabled: true
