@@ -37,7 +37,8 @@ public class HttpBasicAuthorizeFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        HttpServletRequest httpRequest = (HttpServletRequest)request;
+        chain.doFilter(request, response);
+        /*HttpServletRequest httpRequest = (HttpServletRequest)request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         httpResponse.setCharacterEncoding("UTF-8");
         httpResponse.setContentType("application/json; charset=utf-8");
@@ -69,7 +70,7 @@ public class HttpBasicAuthorizeFilter implements Filter {
                 return;
             }
             chain.doFilter(httpRequest, response);
-        }
+        }*/
     }
 
     @Override
